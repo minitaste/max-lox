@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <h1 class="mb-12 text-2xl text-center">Main page</h1>
+    <div class="grid grid-cols-4 ">
+        {% for group in groups %}
+        
+            <div class="group-name">
+                <a href="{% url 'group:detail' group.id %}">
+                    <h2>{{ group.name }}</h2> 
+                </a>
+                
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <div class="grid grid-cols-4 ">
+        {% for professor in professors %}
+            <div class="professor">
+                <a href="{% url 'professor:detail' professor.id %}">
+                    <h2>{{ professor.name }}</h2> 
+                </a>
+                
+            </div>
+
+        {% endfor %} 
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ professor.first_name }} {{ professor.last_name }}{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-black text-2xl">Дані про викладача</h1>
+    <h2 class="text-black text-xl">{{ professor.first_name }} {{ professor.last_name }}</h2>
+    <p class="text-white">{{ professor.position }}</p>
+    <p class="text-white">{{ professor.address }}</p>
+    <p class="text-white">{{ professor.email }}</p>
+          
+{% endblock %}

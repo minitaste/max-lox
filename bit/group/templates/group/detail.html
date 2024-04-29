@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ group.name }} - Grades{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-3xl text-center text-black">Grades for Group: {{ group.name }}</h1>
+    <ul>
+        {% for student in group.student_set.all %}
+        <li class="text-xl">{{ student.first_name }} {{ student.last_name }}</li>
+        <ul>
+            {% for mark in student.mark_set.all %}
+            <li>{{ mark.course.course_name }}: {{ mark.grade }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ul>
+          
+{% endblock %}

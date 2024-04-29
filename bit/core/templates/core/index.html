@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <div class="mt-6 px=6 py=12">
+        <h2 class="text-center text-2xl">Groups:</h2>
+
+        <div class="flex justify-between">
+            {% for group in groups %}
+
+                <div>
+                    <a href="{% url 'group:detail' group.id %}">
+                        <div>
+                            <h2 class="text=xl">{{ group.name }}</h2>
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mt-6 px=6 py=12">
+        <h2 class="text-center text-2xl">Professors:</h2>
+
+        <div class="flex justify-between">
+            {% for professor in professors %}
+                <div>
+                    <a href="{% url 'professor:detail' professor.id %}">
+                        <div>
+                            <h2 class="text=xl">{{ professor.first_name }} {{ professor.last_name }}</h2>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+
+{% endblock %}
